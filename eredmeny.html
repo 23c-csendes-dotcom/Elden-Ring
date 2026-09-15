@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring - Beküldött Eredmény</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100 py-5">
+        <div class="card elden-card p-4 p-md-5" style="max-width: 600px; width: 100%;">
+            <div class="card-body text-center">
+                <h1 class="elden-title h2 mb-2">ENEMY FELLED</h1>
+                <p class="text-secondary small text-uppercase tracking-wide mb-3">Győzelem sikeresen rögzítve</p>
+                <hr class="elden-divider mb-4">
+
+                <div id="result-display" class="text-start fs-5"></div>
+
+                <div class="mt-4 pt-3">
+                    <a href="index.html" class="btn btn-elden w-100 py-2">← ÚJ ENEMY LOGOLÁSA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const display = document.getElementById('result-display');
+            const savedData = localStorage.getItem('eldenBossData');
+
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                display.innerHTML = `
+                    <ul class="list-group list-group-flush bg-transparent">
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Játékos:</span> <span class="fw-bold">${data.playerName}</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Legyőzött Boss:</span> <span class="fw-bold text-warning">${data.bossName}</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Próbálkozások:</span> <span class="fw-bold">${data.attempts} try</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Dátum:</span> <span>${data.victoryDate}</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Nehézség:</span> <span class="fw-bold">${data.difficulty} / 10</span>
+                        </li>
+                        <li class="list-group-item bg-transparent text-light border-secondary">
+                            <span class="elden-label">Idézés (Summon):</span> <span>${data.summon}</span>
+                        </li>
+                    </ul>
+                `;
+            } else {
+                display.innerHTML = "<p class='text-center text-muted'>Még nem található beküldött eredmény!</p>";
+            }
+        };
+    </script>
+</body>
+</html>
