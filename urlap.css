@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --elden-gold: #c8aa6e;
+    --elden-gold-bright: #f3d78c;
+    --elden-dark-bg: #0c0d10;
+    --elden-card-bg: #16181e;
+    --elden-input-bg: #21242c;
+    --elden-border: #3d3423;
+}
+
+body {
+    background-color: var(--elden-dark-bg);
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: radial-gradient(circle at center, #1b1c24 0%, var(--elden-dark-bg) 100%);
+    min-height: 100vh;
+}
+
+.elden-title {
+    font-family: 'Cinzel', serif;
+    color: var(--elden-gold-bright);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(200, 170, 110, 0.4);
+}
+
+.elden-divider {
+    border-top: 2px solid var(--elden-gold);
+    opacity: 0.5;
+    box-shadow: 0 0 8px var(--elden-gold);
+}
+
+.elden-card {
+    background-color: var(--elden-card-bg) !important;
+    border: 1px solid var(--elden-border) !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(200, 170, 110, 0.15) !important;
+    border-radius: 8px;
+}
+
+.elden-label {
+    color: var(--elden-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.elden-input {
+    background-color: var(--elden-input-bg) !important;
+    border: 1px solid var(--elden-border) !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+}
+
+.elden-input:focus {
+    border-color: var(--elden-gold) !important;
+    box-shadow: 0 0 8px rgba(200, 170, 110, 0.5) !important;
+}
+
+.elden-input option {
+    background-color: var(--elden-card-bg);
+    color: #ffffff;
+}
+
+.form-check-input:checked {
+    background-color: var(--elden-gold) !important;
+    border-color: var(--elden-gold) !important;
+}
+
+.btn-elden {
+    background: linear-gradient(135deg, #c8aa6e 0%, #997b41 100%);
+    color: #0c0d10;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.btn-elden:hover {
+    background: linear-gradient(135deg, #f3d78c 0%, #c8aa6e 100%);
+    color: #000;
+    box-shadow: 0 0 15px rgba(243, 215, 140, 0.6);
+    transform: translateY(-2px);
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f4f6f9;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 70px;
+            background-color: #1e293b;
+            overflow: hidden;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .sidebar:hover {
+            width: 240px;
+        }
+
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+            border-bottom: 1px solid #334155;
+            white-space: nowrap; 
+        }
+
+        .sidebar .logo i {
+            font-size: 24px;
+            min-width: 30px;
+            color: #38bdf8;
+        }
+
+        .sidebar .logo span {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 15px;
+            opacity: 0; 
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding-top: 15px;
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            padding: 0 20px;
+            color: #94a3b8;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li a i {
+            font-size: 20px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .sidebar-menu li a span {
+            margin-left: 15px;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+
+        .sidebar-menu li a:hover {
+            color: #ffffff;
+            background-color: #334155;
+        }
+
+        .sidebar-menu li a:hover i {
+            color: #38bdf8;
+        }
+
+
+        .sidebar:hover .logo span,
+        .sidebar:hover .sidebar-menu li a span {
+            opacity: 1;
+            transition-delay: 0.1s;
+        }
+
+
+        .main-content {
+            margin-left: 70px;
+            padding: 40px;
+            flex: 1;
+        }
